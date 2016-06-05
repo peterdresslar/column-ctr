@@ -1,0 +1,5 @@
+Rudimentary counting of column occurences specific to NCBI GEO datafiles. 
+
+Some arbitrary combination of related columns based primarily on multi-channel counts.
+
+Outputs to CSV with column names and frequencies.
