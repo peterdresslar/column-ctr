@@ -39,6 +39,7 @@ def update_occurences(row):
     p = re.compile('Sample_characteristics_ch[0-9]_', re.IGNORECASE)
     q = re.compile('_ch[0-9]')
     for label in row:
+        label = label.lower()
         label = p.sub('Smp_chr_n_', label)
         label = q.sub('_n', label)
         if label in occurences:
@@ -49,9 +50,7 @@ def update_occurences(row):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
-        description='Put data in database.',
-        epilog='''"Space is big. You just won't believe how vastly,
-        hugely, mind-bogglingly big it is."'''
+        description='Put data in csv.',
     )
     parser.add_argument('--num-files', dest='numfiles', type=int, default=10, required=False,
                         help='number of files to read')
